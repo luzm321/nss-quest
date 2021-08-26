@@ -16,7 +16,7 @@ namespace Quest
             //   a number of awesome points to gain or lose depending on the success of the challenge
             Challenge twoPlusTwo = new Challenge("2 + 2?", 4, 10);
             Challenge theAnswer = new Challenge(
-                "What's the answer to life, the universe and everything?", 42, 25);
+                "What's the answer to life, the universe and everything?", 21, 25);
             Challenge whatSecond = new Challenge(
                 "What is the current second?", DateTime.Now.Second, 50);
 
@@ -90,28 +90,52 @@ Please enter your name: ");
                 favoriteBeatle
             };
 
-            // Loop through all the challenges and subject the Adventurer to them
-            foreach (Challenge challenge in challenges)
+            // Method that will execute the challenges for the adventurer:
+            void startAdventure()
             {
-                // invoke method that takes an Adventurer object and makes that Adventurer perform the challenge
-                challenge.RunChallenge(theAdventurer);
+                // Loop through all the challenges and subject the Adventurer to them
+                foreach (Challenge challenge in challenges)
+                {
+                    // invoke method that takes an Adventurer object and makes that Adventurer perform the challenge
+                    challenge.RunChallenge(theAdventurer);
 
+                }
+
+                // This code examines how Awesome the Adventurer is after completing the challenges
+                // And praises or humiliates them accordingly
+                if (theAdventurer.Awesomeness >= maxAwesomeness)
+                {
+                    Console.WriteLine("YOU DID IT! You are truly awesome!");
+                }
+                else if (theAdventurer.Awesomeness <= minAwesomeness)
+                {
+                    Console.WriteLine("Get out of my sight. Your lack of awesomeness offends me!");
+                }
+                else
+                {
+                    Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
+                }
+
+                // Condition that repeats the adventure or ends the program depending on user response:
+                Console.WriteLine();
+                Console.Write("Would you like to venture on this quest again? (Y/N): ");
+                string repeatQuest = Console.ReadLine().ToLower();
+                Console.WriteLine();
+
+                if (repeatQuest == "y")
+                {
+                    Console.WriteLine("Brave choice! Will it be déjà vu all over again?");
+                    Console.WriteLine();
+                    startAdventure();
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("I bid thee adieu, see you on the next adventure! :D");
+                }
             }
 
-            // This code examines how Awesome the Adventurer is after completing the challenges
-            // And praises or humiliates them accordingly
-            if (theAdventurer.Awesomeness >= maxAwesomeness)
-            {
-                Console.WriteLine("YOU DID IT! You are truly awesome!");
-            }
-            else if (theAdventurer.Awesomeness <= minAwesomeness)
-            {
-                Console.WriteLine("Get out of my sight. Your lack of awesomeness offends me!");
-            }
-            else
-            {
-                Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
-            }
+            startAdventure(); // invoking startAdventure() method
         }
     }
 }
