@@ -42,8 +42,42 @@ namespace Quest
             int minAwesomeness = 0;
             int maxAwesomeness = 100;
 
-            // Make a new "Adventurer" object using the "Adventurer" class
-            Adventurer theAdventurer = new Adventurer("Jack");
+            // Make a new "Adventurer" object using the "Adventurer" class, prompt user for their name, and pass value to the
+            // Adventurer constructor when creating the new object:
+            Console.Write(@"
+                                               :
+                                              ::
+                                             ::
+                                             ::
+                                            ::
+                                            ::
+                              __           ::
+   _..-'/-¯¯--/_          ,.--. ''.     |`\=,.. 
+-:--.---''-..  /_         |\\_\..  \    `-.=._/
+.-|¯         '.  \         \_ \-`/\ |    ::`
+  /  @  \      \  -_   _..--|-\¯¯``'--.-/_\
+  |   .-'|      \  \\-'\_/     ¯/-.|-.\_\_/
+  \_./` /        \_//-''/    .-'
+       |           '-/'@====/              _.--.
+   __.'             /¯¯'-. \-'.          _/   /¯'
+.''____|   /       |'--\__\/-._        .'    |
+ \ \_. \  |       _| -/        \-.__  /     /
+  \___\ '/   _.  ('-..| /       '_  ''   _.'
+        /  .'     ¯¯¯¯ /        | ``'--''
+       (  / ¯```¯¯¯¯¯|-|        |
+        \ \_.         \ \      /  
+         \___\         '.'.   /
+                         /    |
+                        /   .'
+                       /  .' |
+                     .'  / \  \
+                    /___| /___'
+
+Let's go on an adventure quest! 
+Please enter your name: ");
+
+            string adventurerName = Console.ReadLine();
+            Adventurer theAdventurer = new Adventurer(adventurerName);
 
             // A list of challenges for the Adventurer to complete
             // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
