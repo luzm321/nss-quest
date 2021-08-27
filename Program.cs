@@ -53,6 +53,36 @@ namespace Quest
                 2, 50
             );
 
+            Challenge countryCapital = new Challenge(
+             @"What is the capital city of South Korea?
+    1) Busan
+    2) Jeju-do
+    3) Seoul
+    4) Jinhae
+",
+             3, 20
+         );
+
+            Challenge candyColor = new Challenge(
+             @"What is the rarest M&M color?
+    1) Blue
+    2) Red
+    3) Green
+    4) Brown
+",
+             4, 40
+         );
+
+            Challenge rainTrivia = new Challenge(
+             @"What does come down but never goes up?
+    1) Sun
+    2) Rain
+    3) Lightning
+    4) Wind
+",
+             2, 30
+         );
+
             // "Awesomeness" is like our Adventurer's current "score"
             // A higher Awesomeness is better
 
@@ -121,18 +151,29 @@ Please enter your name: ");
                 guessRandom,
                 favoriteBeatle,
                 bestFruit,
-                cutestAnimal
+                cutestAnimal,
+                countryCapital,
+                candyColor,
+                rainTrivia
             };
 
             // Method that will execute the challenges for the adventurer:
             void startAdventure()
             {
                 // Loop through all the challenges and subject the Adventurer to them
-                foreach (Challenge challenge in challenges)
-                {
-                    // invoke method that takes an Adventurer object and makes that Adventurer perform the challenge
-                    challenge.RunChallenge(theAdventurer);
+                // foreach (Challenge challenge in challenges)
+                // {
+                //     // invoke method that takes an Adventurer object and makes that Adventurer perform the challenge
+                //     challenge.RunChallenge(theAdventurer);
 
+                // }
+
+                // randomly selects 5 challenges for the adventurer to face:
+                for (int i = 0; i < 5; i++)
+                {
+                    int challengesCount = challenges.Count;
+                    int randomChallenge = new Random().Next(challengesCount);
+                    challenges[randomChallenge].RunChallenge(theAdventurer);
                 }
 
                 // This code examines how Awesome the Adventurer is after completing the challenges

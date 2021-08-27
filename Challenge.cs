@@ -26,7 +26,7 @@ namespace Quest
         // This method will take an Adventurer object as a parameter and make that Adventurer perform the challenge
         public void RunChallenge(Adventurer adventurer)
         {
-            Console.Write($"{_text}: ");
+            Console.Write($"{_text} Response: ");
             string answer = Console.ReadLine(); // storing user answer in string data type variable
 
             int numAnswer;
