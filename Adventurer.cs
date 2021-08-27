@@ -16,12 +16,16 @@ namespace Quest
         public int Awesomeness
         { get; set; }
 
+        // hat property:
+        public Hat HatLuster { get; }
+
         // A constructor to make a new Adventurer object with a given name
-        public Adventurer(string name, Robe colorfulRobe)
+        public Adventurer(string name, Robe colorfulRobe, Hat hatLuster)
         {
             Name = name;
             Awesomeness = 50;
             ColorfulRobe = colorfulRobe;
+            HatLuster = hatLuster;
         }
 
         // Method returns a string that contains the adventurer's name and a description of their robe:
@@ -29,7 +33,7 @@ namespace Quest
         {
             // String.Join method combines many strings into one, receives 2 arguments: an array (or IEnumerable) and a separator string.
             string robeColors = String.Join(" and ", ColorfulRobe.Colors);
-            string details = $"Adventurer, {Name}, is wearing a {robeColors} robe that is {ColorfulRobe.RobeLength} inches long! :)";
+            string details = $"Adventurer, {Name}, is wearing a {HatLuster.ShininessDescription} hat with a {robeColors} robe that is {ColorfulRobe.RobeLength} inches long! :)";
             return details;
         }
 

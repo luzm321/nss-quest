@@ -99,9 +99,16 @@ Please enter your name: ");
             string adventurerName = Console.ReadLine(); // storing user's name input in string variable
             // using the object initializer to instantiate the Robe class and set its properties:
             var adventurerRobe = new Robe() { Colors = new List<string>() { "Seafoam Green", "Lilac" }, RobeLength = 21 };
-            Adventurer theAdventurer = new Adventurer(adventurerName, adventurerRobe);
+            // using the object initializer to instantiate the Hat class and set its property:
+            var adventurerHat = new Hat() { ShininessLevel = 21 };
+            Console.WriteLine();
+            Adventurer theAdventurer = new Adventurer(adventurerName, adventurerRobe, adventurerHat);
             // invoking method from the Adventurer Class to display robe details prior to start of quest:
             Console.WriteLine(theAdventurer.GetDescription());
+            Console.WriteLine();
+
+            Console.WriteLine("Let the Quest begin! /(>_<)/");
+            Console.WriteLine();
 
             // A list of challenges for the Adventurer to complete
             // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
