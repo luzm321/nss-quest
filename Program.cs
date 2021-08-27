@@ -96,11 +96,12 @@ namespace Quest
 Let's go on an adventure quest! 
 Please enter your name: ");
 
-            string adventurerName = Console.ReadLine(); // storing user's name input in string variable
+            var adventurerName = Console.ReadLine(); // storing user's name input in string variable
             // using the object initializer to instantiate the Robe class and set its properties:
             var adventurerRobe = new Robe() { Colors = new List<string>() { "Seafoam Green", "Lilac" }, RobeLength = 21 };
             // using the object initializer to instantiate the Hat class and set its property:
             var adventurerHat = new Hat() { ShininessLevel = 21 };
+            var adventurerPrize = new Prize("Rupees and Emeralds");
             Console.WriteLine();
             Adventurer theAdventurer = new Adventurer(adventurerName, adventurerRobe, adventurerHat);
             // invoking method from the Adventurer Class to display robe details prior to start of quest:
@@ -149,12 +150,14 @@ Please enter your name: ");
                     Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
                 }
 
-                // Condition that repeats the adventure or ends the program depending on user response:
+                Console.WriteLine();
+                // invoking ShowPrize() method:
+                adventurerPrize.ShowPrize(theAdventurer);
                 Console.WriteLine();
                 Console.Write("Would you like to venture on this quest again? (Y/N): ");
                 string repeatQuest = Console.ReadLine().ToLower();
                 Console.WriteLine();
-
+                // Condition that repeats the adventure or ends the program depending on user response:
                 if (repeatQuest == "y")
                 {
                     Console.WriteLine("Brave choice! Will it be déjà vu all over again?");
