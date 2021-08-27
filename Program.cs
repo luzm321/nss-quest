@@ -202,6 +202,10 @@ Please enter your name: ");
                 if (repeatQuest == "y")
                 {
                     Console.WriteLine("Brave choice! Will it be déjà vu all over again?");
+                    // If user repeats quest, multiply # of correct answers by 10 and add it do the initial Awesomeness of the 
+                    // adventurer on their next quest:
+                    int correctCountAugmenter = theAdventurer.CorrectCount * 10;
+                    theAdventurer.Awesomeness += correctCountAugmenter;
                     Console.WriteLine();
                     startAdventure();
                 }

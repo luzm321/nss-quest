@@ -39,6 +39,7 @@ namespace Quest
             if (isNumber && numAnswer == _correctAnswer)
             {
                 Console.WriteLine("Well Done!");
+                adventurer.CorrectCount++; // increment 1 to CorrectCount property of Adventurer object if correctly answered
 
                 // Note how we access an Adventurer object's property
                 // if adventurer answers correctly, add awesomeness points for that challenge to the current value of Awesomeness property
