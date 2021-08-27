@@ -33,6 +33,26 @@ namespace Quest
                 4, 20
             );
 
+            Challenge bestFruit = new Challenge(
+                @"What is the best fruit in the multiverse?
+    1) Mango
+    2) Strawberry
+    3) Jackfruit
+    4) Durian
+",
+                1, 50
+            );
+
+            Challenge cutestAnimal = new Challenge(
+                @"What is the cutest animal to ever exist?
+    1) Penguin
+    2) Panda
+    3) Chinchilla
+    4) Capybara
+",
+                2, 50
+            );
+
             // "Awesomeness" is like our Adventurer's current "score"
             // A higher Awesomeness is better
 
@@ -76,8 +96,12 @@ namespace Quest
 Let's go on an adventure quest! 
 Please enter your name: ");
 
-            string adventurerName = Console.ReadLine();
-            Adventurer theAdventurer = new Adventurer(adventurerName);
+            string adventurerName = Console.ReadLine(); // storing user's name input in string variable
+            // using the object initializer to instantiate the Robe class and set its properties:
+            var adventurerRobe = new Robe() { Colors = new List<string>() { "Seafoam Green", "Lilac" }, RobeLength = 21 };
+            Adventurer theAdventurer = new Adventurer(adventurerName, adventurerRobe);
+            // invoking method from the Adventurer Class to display robe details prior to start of quest:
+            Console.WriteLine(theAdventurer.GetDescription());
 
             // A list of challenges for the Adventurer to complete
             // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
@@ -87,7 +111,9 @@ Please enter your name: ");
                 theAnswer,
                 whatSecond,
                 guessRandom,
-                favoriteBeatle
+                favoriteBeatle,
+                bestFruit,
+                cutestAnimal
             };
 
             // Method that will execute the challenges for the adventurer:

@@ -12,7 +12,6 @@ namespace Quest
         private int _correctAnswer;
         private int _awesomenessChange;
 
-
         // A constructor for the Challenge
         // We can tell it's a constructor because it has the same name as the class 
         //   and it doesn't specify a return type
