@@ -18,6 +18,7 @@ namespace Quest
 
         // hat property:
         public Hat HatLuster { get; }
+        public int CorrectCount { get; set; } // variable storing number of challenges answered correctly
 
         // A constructor to make a new Adventurer object with a given name
         public Adventurer(string name, Robe colorfulRobe, Hat hatLuster)
@@ -26,6 +27,7 @@ namespace Quest
             Awesomeness = 50;
             ColorfulRobe = colorfulRobe;
             HatLuster = hatLuster;
+            CorrectCount = 0;
         }
 
         // Method returns a string that contains the adventurer's name and a description of their robe:
